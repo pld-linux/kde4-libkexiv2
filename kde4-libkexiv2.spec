@@ -2,14 +2,14 @@ Summary:	libkexiv2
 Summary(pl.UTF-8):	libkexiv2
 Name:		libkexiv2
 Version:	0.1.1
-Release:	1
+Release:	2
 Epoch:		0
 License:	GPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/kipi/%{name}-%{version}.tar.bz2
 # Source0-md5:	cd577926992dc1ea5359f9cb53c6a10d
 URL:		http://www.kipi-plugins.org/drupal/
-#BuildRequires:
+BuildRequires:	exiv2-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
