@@ -9,11 +9,13 @@ Group:		Libraries
 Source0:	http://dl.sourceforge.net/kipi/%{name}-%{version}.tar.bz2
 # Source0-md5:	cd577926992dc1ea5359f9cb53c6a10d
 URL:		http://www.kipi-plugins.org/drupal/
-#BuildRequires:	
+#BuildRequires:
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-libkexiv2
+Libkexiv2 is a wrapper around Exiv2 library to manipulate pictures
+metadata. This library is used by kipi-plugins, digiKam and others
+kipi host programs.
 
 #%description -l pl.UTF-8
 
