@@ -1,9 +1,8 @@
-Summary:	libkexiv2
-Summary(pl.UTF-8):	libkexiv2
+Summary:	libkexiv2 - picture metadata manipulation library
+Summary(pl.UTF-8):	libkexiv2 - biblioteka do obróbki metadanych obrazków
 Name:		libkexiv2
 Version:	0.1.1
 Release:	2
-Epoch:		0
 License:	GPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/kipi/%{name}-%{version}.tar.bz2
@@ -17,11 +16,14 @@ Libkexiv2 is a wrapper around Exiv2 library to manipulate pictures
 metadata. This library is used by kipi-plugins, digiKam and others
 kipi host programs.
 
-#%description -l pl.UTF-8
+%description -l pl.UTF-8
+libkexiv2 to obudowanie biblioteki Exiv2 do obróbki metadanych
+obrazków. Ta biblioteka jest wykorzystywana przez pakiety
+kipi-plugins, digiKam i inne programy oparte na kiki.
 
 %package devel
 Summary:	Header files for %{name} library
-Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki F%{name}
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki %{name}
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -29,7 +31,7 @@ Requires:	%{name} = %{version}-%{release}
 Header files for %{name} library.
 
 %description devel -l pl.UTF-8
-Pliki nagłówkowe biblioteki F%{name}
+Pliki nagłówkowe biblioteki %{name}.
 
 %prep
 %setup -q
