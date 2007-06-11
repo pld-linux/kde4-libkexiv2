@@ -27,6 +27,8 @@ Summary:	Header files for %{name} library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki %{name}
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	exiv2-devel
+Requires:	kdelibs-devel >= 9:3.4.0
 
 %description devel
 Header files for %{name} library.
