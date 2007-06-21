@@ -1,14 +1,15 @@
 Summary:	libkexiv2 - picture metadata manipulation library
 Summary(pl.UTF-8):	libkexiv2 - biblioteka do obróbki metadanych obrazków
 Name:		libkexiv2
-Version:	0.1.2
+Version:	0.1.5
 Release:	1
 License:	GPL
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/kipi/%{name}-%{version}.tar.bz2
-# Source0-md5:	8d273bf0ce692a814a0945c0664e116a
+# Source0-md5:	4171b8e929b11ffd82e31bf00f359a19
+Patch0:		kde-ac260-lt.patch
 URL:		http://www.kipi-plugins.org/drupal/
-BuildRequires:	exiv2-devel
+BuildRequires:	exiv2-devel >= 0.14
 BuildRequires:	kdelibs-devel >= 9:3.4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -38,8 +39,10 @@ Pliki nagłówkowe biblioteki %{name}.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
+%{__make} -f admin/Makefile.common cvs
 %configure
 %{__make}
 
