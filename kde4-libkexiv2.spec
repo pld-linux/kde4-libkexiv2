@@ -9,6 +9,8 @@ Source0:	http://dl.sourceforge.net/kipi/%{name}-%{version}.tar.bz2
 # Source0-md5:	4171b8e929b11ffd82e31bf00f359a19
 Patch0:		kde-ac260-lt.patch
 URL:		http://www.kipi-plugins.org/drupal/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	exiv2-devel >= 0.14
 BuildRequires:	kdelibs-devel >= 9:3.4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
