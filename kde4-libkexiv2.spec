@@ -13,6 +13,7 @@ BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1.6.1
 BuildRequires:	exiv2-devel >= 0.14
 BuildRequires:	kdelibs-devel >= 9:3.4.0
+BuildRequires:	pkgconfig >= 0.9.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
