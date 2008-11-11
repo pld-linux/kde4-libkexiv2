@@ -2,7 +2,7 @@ Summary:	libkexiv2 - picture metadata manipulation library
 Summary(pl.UTF-8):	libkexiv2 - biblioteka do obróbki metadanych obrazków
 Name:		libkexiv2
 Version:	0.1.7
-Release:	4
+Release:	5
 License:	GPL v2+
 Group:		X11/Libraries
 Source0:	http://dl.sourceforge.net/kipi/%{name}-%{version}.tar.bz2
