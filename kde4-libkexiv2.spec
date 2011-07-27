@@ -1,24 +1,20 @@
+%define         _state          stable
+%define         orgname         libkexiv2
+%define         qtver           4.7.3
 Summary:	libkexiv2 - picture metadata manipulation library
 Summary(pl.UTF-8):	libkexiv2 - biblioteka do obróbki metadanych obrazków
 Name:		libkexiv2
-Version:	0.1.9
+Version:	4.7.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Libraries
-Source0:	http://downloads.sourceforge.net/kipi/%{name}-%{version}.tar.bz2
-# Source0-md5:	6e6fc9edbfad4506f6f59508d9aa45d6
-Patch0:		kde-ac260-lt.patch
-Patch1:		kde-am.patch
-URL:		http://www.kipi-plugins.org/drupal/
-BuildRequires:	autoconf >= 2.53
-BuildRequires:	automake >= 1.6.1
+Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
+# Source0-md5:	a43d210bdfe3de3589b4ba7bfccc4855
+URL:		http://www.kde.org/
 BuildRequires:	exiv2-devel >= 0.18
-BuildRequires:	kdelibs-devel >= 9:3.4.0
+BuildRequires:	kde4-kdelibs-devel
 BuildRequires:	pkgconfig >= 0.9.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-# build broken with spaces in CC
-%undefine	with_ccache
 
 %description
 Libkexiv2 is a KDE wrapper around Exiv2 library to manipulate pictures
@@ -36,7 +32,6 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki %{name}
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	exiv2-devel
-Requires:	kdelibs-devel >= 9:3.4.0
 
 %description devel
 Header files for %{name} library.
@@ -46,19 +41,20 @@ Pliki nagłówkowe biblioteki %{name}.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
 
 %build
-%{__make} -f admin/Makefile.common cvs
-%configure
+install -d build
+cd build
+%cmake \
+	../
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+%{__make} -C build/ install \
+        DESTDIR=$RPM_BUILD_ROOT \
+        kde_htmldir=%{_kdedocdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -68,13 +64,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README RELEASE.rev
+%doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/libkexiv2.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libkexiv2.so.5
+%attr(755,root,root) %ghost %{_libdir}/libkexiv2.so.10
+%{_datadir}/apps/libkexiv2
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libkexiv2.so
-%{_libdir}/libkexiv2.la
 %{_includedir}/%{name}
 %{_pkgconfigdir}/libkexiv2.pc
