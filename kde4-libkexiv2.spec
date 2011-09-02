@@ -15,6 +15,7 @@ BuildRequires:	exiv2-devel >= 0.18
 BuildRequires:	kde4-kdelibs-devel
 BuildRequires:	pkgconfig >= 0.9.0
 Obsoletes:	kde4-kdegraphics
+Obsoletes:	kde4-libkexiv2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
