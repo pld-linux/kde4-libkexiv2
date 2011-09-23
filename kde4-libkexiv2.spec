@@ -11,7 +11,7 @@ Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
 # Source0-md5:	78940384d4d194cc82f26f73187234d1
 URL:		http://www.kde.org/
-BuildRequires:	exiv2-devel >= 0.18
+BuildRequires:	exiv2-devel >= 0.20
 BuildRequires:	kde4-kdelibs-devel
 BuildRequires:	pkgconfig >= 0.9.0
 Obsoletes:	kde4-kdegraphics
