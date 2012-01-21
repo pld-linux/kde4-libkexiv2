@@ -3,7 +3,7 @@
 %define         qtver           4.8.0
 Summary:	libkexiv2 - picture metadata manipulation library
 Summary(pl.UTF-8):	libkexiv2 - biblioteka do obróbki metadanych obrazków
-Name:		libkexiv2
+Name:		kde4-libkexiv2
 Version:	4.8.0
 Release:	1
 License:	GPL v2+
@@ -15,7 +15,7 @@ BuildRequires:	exiv2-devel >= 0.20
 BuildRequires:	kde4-kdelibs-devel
 BuildRequires:	pkgconfig >= 0.9.0
 Obsoletes:	kde4-kdegraphics
-Obsoletes:	kde4-libkexiv2 < 4.6.99
+Obsoletes:	libkexiv2 < 4.8.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -35,6 +35,7 @@ Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	exiv2-devel
 Obsoletes:	kde4-kdegraphics-devel < 4.6.99
+Obsoletes:	libkexiv2-devel < 4.8.0
 
 %description devel
 Header files for %{name} library.
@@ -43,7 +44,7 @@ Header files for %{name} library.
 Pliki nagłówkowe biblioteki %{name}.
 
 %prep
-%setup -q
+%setup -q -n %{orgname}-%{version}
 
 %build
 install -d build
@@ -75,5 +76,5 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libkexiv2.so
-%{_includedir}/%{name}
+%{_includedir}/libkexiv2
 %{_pkgconfigdir}/libkexiv2.pc
