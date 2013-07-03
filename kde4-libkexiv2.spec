@@ -4,12 +4,12 @@
 Summary:	libkexiv2 - picture metadata manipulation library
 Summary(pl.UTF-8):	libkexiv2 - biblioteka do obróbki metadanych obrazków
 Name:		kde4-libkexiv2
-Version:	4.10.4
+Version:	4.10.5
 Release:	1
 License:	GPL v2+
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.xz
-# Source0-md5:	4cffa41d6e8bb2aa362f3311d5f704df
+# Source0-md5:	8e0f14f13b1152b535ef3775e6e97062
 URL:		http://www.kde.org/
 BuildRequires:	exiv2-devel >= 0.20
 BuildRequires:	kde4-kdelibs-devel
