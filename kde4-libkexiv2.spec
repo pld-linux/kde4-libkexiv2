@@ -1,11 +1,10 @@
 %define         _state          stable
 %define         orgname         libkexiv2
-%define         qtver           4.8.3
 Summary:	libkexiv2 - picture metadata manipulation library
 Summary(pl.UTF-8):	libkexiv2 - biblioteka do obróbki metadanych obrazków
 Name:		kde4-libkexiv2
 Version:	4.14.3
-Release:	3
+Release:	4
 License:	GPL v2+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/%{_state}/%{version}/src/%{orgname}-%{version}.tar.xz
@@ -13,7 +12,8 @@ Source0:	http://download.kde.org/%{_state}/%{version}/src/%{orgname}-%{version}.
 URL:		http://www.kde.org/
 BuildRequires:	exiv2-devel >= 0.20
 BuildRequires:	kde4-kdelibs-devel
-BuildRequires:	pkgconfig >= 0.9.0
+BuildRequires:	pkgconfig >= 1:0.9.0
+Requires:	exiv2-libs >= 0.20
 Obsoletes:	kde4-kdegraphics
 Obsoletes:	libkexiv2 <= 4.8.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -29,19 +29,19 @@ obrazków. Ta biblioteka jest wykorzystywana przez pakiety
 kipi-plugins, digiKam i inne programy oparte na kiki.
 
 %package devel
-Summary:	Header files for %{name} library
-Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki %{name}
+Summary:	Header files for libkexiv2 library
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libkexiv2
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	exiv2-devel
+Requires:	exiv2-devel >= 0.20
 Obsoletes:	kde4-kdegraphics-devel < 4.6.99
 Obsoletes:	libkexiv2-devel <= 4.8.0
 
 %description devel
-Header files for %{name} library.
+Header files for libkexiv2 library.
 
 %description devel -l pl.UTF-8
-Pliki nagłówkowe biblioteki %{name}.
+Pliki nagłówkowe biblioteki libkexiv2.
 
 %prep
 %setup -q -n %{orgname}-%{version}
